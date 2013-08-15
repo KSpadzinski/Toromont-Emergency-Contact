@@ -100,6 +100,7 @@ CSAPP.Contacts = (function() {
 			}),
 	    template: $("#datatemplate-contacts").html(),
 	    style: "inset",
+	    pullToRefresh: true,
 	    fixedHeaders: false
 	});
 });
