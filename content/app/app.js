@@ -74,3 +74,24 @@ CSAPP.ReadLocalStorage = (function(key) {
 CSAPP.GetLocation = (function () {
     navigator.geolocation.getCurrentPosition(handle_geolocation_query, handle_errors, { enableHighAccuracy: true });
 });
+
+/***** Get Data *************************/
+// this function returns a Kendo UI DataSource
+// which reads the top threads off of the programming.reddit
+// datasource
+CSAPP.Contacts = kendo.data.DataSource.create({
+  // set the data to a local array of object
+  transport: {
+    read: {
+			url: "http://ws.toromont.ca/touch/BizInfo/Public/contact/myContact",
+			crossDomain: true,
+            beforeSend: function (xhr) {
+            	xhr.setRequestHeader("AuthX", "WRAP access_token=" + xTOKEN);
+            },
+            dataType: "json"
+    }
+  },
+  schema: {
+    data: "Contacts"
+  }
+});

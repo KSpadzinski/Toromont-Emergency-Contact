@@ -5,7 +5,7 @@
     
     <link href="content/styles/kendo.mobile.common.min.css" rel="stylesheet" />
     <link href="content/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+    <link href="content/fonts/font-awesome.min.css" rel="stylesheet" />
     
     <!-- App Related CSS -->
     <link href="content/app/app.css" rel="stylesheet" />
@@ -23,8 +23,8 @@
     </div>
 
     <!-- Main View -->
-    <div data-role="view" data-title="Toromont App" id="view-main" data-layout="layout-main">
-        
+    <div data-role="view" data-title="My Contacts" id="view-main" data-layout="layout-main">
+        <ul data-role="listview" id="listview-contacts" data-style="inset" data-template="datatemplate-contacts" data-source="CSAPP.Contacts"></ul>
     </div>
 
     <!-- Settings View -->
@@ -61,6 +61,12 @@
             <a data-click="CSAPP.closeModalViewAlert" id="modalview-ok-button" type="button" data-role="button">OK</a>
         </div>
     </div>
+    
+    <script type="text/x-kendo-template" id="datatemplate-contacts">
+	    <div class="listview-name">#:Detail.FullName#</div>
+	    <div class="listview-title">#:Detail.Title#</div>
+	    <a href="tel:#:Detail.MobilePhone#" data-role="button" class="listview-button"><i class="icon-phone"></i>&nbsp;Call Mobile</a><a href="mailto:#:Detail.Email#" data-role="button" class="listview-button"><i class="icon-envelope"></i>&nbsp;Send Email</a><a href="sms:#:Detail.MobilePhone#" data-role="button" class="listview-button"><i class="icon-comment"></i>&nbsp;Send SMS</a>
+	</script>
 
     
     <script src="content/js/jquery.old.js" type="text/javascript"></script>
@@ -74,5 +80,6 @@
     <script src="content/app/geo.js" type="text/javascript" ></script>
     <script src="content/app/scan.js" type="text/javascript" ></script>    
     <script src="content/app/touch.js" type="text/javascript" ></script>
+    
 </body>
 </html>
