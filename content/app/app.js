@@ -12,19 +12,10 @@ var CSAPP = CSAPP || {};
 
 CSAPP.run = (function () {
     // create the Kendo UI Mobile application
-    CSAPP.app = new kendo.mobile.Application(document.body);
+    CSAPP.app = new kendo.mobile.Application(document.body, { skin: 'flat'} );
 
     // get geolocation
     CSAPP.GetLocation();
-
-    /* Phonegap BarcodeScanner Plugin */
-    try {
-        scanner = cordova.require("cordova/plugin/BarcodeScanner");
-        CSAPP_ISBARCODESCANAVAILABLE = true;
-    }
-    catch (e) {
-        CSAPP_ISBARCODESCANAVAILABLE = false;
-    }
 
     // check for authentication token
     var xTOKEN = CSAPP.ReadLocalStorage("xToken");

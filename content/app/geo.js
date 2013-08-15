@@ -14,6 +14,4 @@
 function handle_geolocation_query(position) {
     LATITUDE = position.coords.latitude;
     LONGITUDE = position.coords.longitude;
-
-    map.setView([LATITUDE, LONGITUDE], 14);
 }
