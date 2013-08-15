@@ -1,0 +1,145 @@
+﻿@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+.km-root .transitions-button,
+.km-root .transitions-cancel {
+    display: block;
+    text-align: center;
+    margin: .6em .8em 0;
+    font-size: 1.2em;
+    background-color: #369;
+}
+
+.km-blackberry .transitions-button,
+.km-blackberry .transitions-cancel {
+    margin: .6em 1.8em 0;
+}
+
+#view-transitions,
+#view-main p {
+    color: #fff;
+    text-align: center;
+}
+
+#view-transitions img,
+#view-signin img {
+    display: block;
+    margin: 30px auto;
+}
+    
+#view-transitions .km-content,
+#view-signin .km-content,
+#view-main .km-content 
+{
+}
+
+.km-ios #view-main .km-button,
+.km-blackberry #view-main .km-content .km-button,
+.km-flat #view-settings .km-content .km-button {
+    background-color: DarkRed;
+	color: #fff;
+}
+    
+.km-ios #view-signin .transitions-button,
+.km-blackberry #view-signin .km-content .transitions-button,
+.km-flat #view-signin .km-content .transitions-button {
+    background-color: #000;
+	color: #fff;
+}
+
+.km-blackberry #view-transitions *,
+.km-blackberry #view-signin *,
+.km-blackberry #view-main *
+{
+    color: #fff;
+}
+
+.km-ios #view-transitions .km-button,
+.km-ios #view-signin .transitions-cancel {
+    background-color: #000;
+}
+    
+.km-flat #view-transitions .km-button,
+.km-flat #view-signin .km-content .transitions-cancel {
+    background-color: #000;
+    color: #fff;
+}
+    
+.km-ios #view-transitions .km-navbar,
+.km-ios #view-signin .km-navbar,
+.km-ios #view-main .km-navbar,
+.km-blackberry #view-transitions .km-navbar,
+.km-blackberry #view-signin .km-navbar,
+.km-blackberry #view-main .km-navbar,
+.km-flat #view-transitions .km-navbar,
+.km-flat #view-signin .km-navbar,
+.km-flat #view-main .km-navbar {
+	
+}
+
+#label-login-message {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    color: Red;
+    font-weight: bold;
+    font-family: 'Open Sans';
+}
+
+#modalview-ok-button 
+{
+    display: block;
+    width: 100px;
+    margin: 5px auto;
+}
+
+.km-flat
+{
+    font-family: 'Open Sans';
+}
+
+.km-flat .km-switch-handle,
+.km-flat .k-slider-selection,
+.km-flat .km-switch-background
+{
+    color: #fec820;
+}
+
+.km-flat .km-loader,
+.km-flat .km-rowinsert,
+.km-flat .km-state-active,
+.km-flat .km-scroller-pull,
+.km-flat .k-slider-selection,
+.km-flat .km-touch-scrollbar,
+.km-flat .km-pages .km-current-page,
+.km-flat .k-slider .k-draghandle,
+.km-flat .k-slider .k-draghandle:hover,
+.km-flat .km-tabstrip .km-state-active,
+.km-flat .km-scroller-refresh.km-load-more,
+.km-flat .km-popup .k-state-hover,
+.km-flat .km-popup .k-state-focused,
+.km-flat .km-popup .k-state-selected,
+.km-flat .km-actionsheet > li > a:active,
+.km-flat .km-actionsheet > li > a:hover,
+.km-flat li.km-state-active .km-listview-link,
+.km-flat li.km-state-active .km-listview-label,
+.km-flat .km-listview-label input[type=radio]:checked,
+.km-flat .km-listview-label input[type=checkbox]:checked
+{
+    background: #fec820;
+}
+
+.km-flat .km-filter-wrap > input:focus
+{
+    border-color: #fec820;
+}
+
+#button-scan
+{
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 5px auto;
+}
