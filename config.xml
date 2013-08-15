@@ -2,11 +2,11 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.toromont.starterapp"
-        version   = "1.0.1">
-    <name>Toromont App</name>
+        version   = "1.0.0">
+    <name>Toromont Emergency Contact</name>
 
     <description>
-        Toromont basic application
+        Toromont emergency contact application
     </description>
 
     <author href="http://toromont.com" email="mobilesolutions@toromont.com">
@@ -23,8 +23,6 @@
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="prerendered-icon" value="true" />
 
-    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
-    
     <!--
     <icon src="content/images/icons/icon.png" />
     <gap:splash src="content/images/splash/splash.png" />
