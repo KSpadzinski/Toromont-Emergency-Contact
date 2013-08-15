@@ -104,6 +104,13 @@ var dsGroups = new kendo.data.DataSource({
 	}
 })
 
+var dsSMSAll = new kendo.data.DataSource({
+	transport: transport,
+	schema: {
+		data: "MobilePhones"
+	}
+});
+
 CSAPP.Contacts = (function() {
 	$("#listview-contacts").kendoMobileListView({
 	    dataSource: dsContacts,
@@ -122,8 +129,18 @@ CSAPP.Groups = (function(){
 	});
 });
 
-
-
 function listviewContactsClick(e) {
      console.log(e.item); // The clicked item as a jQuery object
+ }
+ 
+ function listviewGroupsClick(e) {
+     console.log(e.item); // The clicked item as a jQuery object
+ }
+ 
+ function emailAll(e) {
+     CSAPP.openModalViewAlert("Send Global Email Function");
+ }
+ 
+ function smsAll(e) {
+     CSAPP.openModalViewAlert("Send Global SMS Function");
  }

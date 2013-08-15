@@ -24,7 +24,10 @@
 
     <!-- Main View - My Contacts -->
     <div data-role="view" data-title="My Contacts" id="view-main" data-layout="layout-main" data-init="CSAPP.Contacts">
-    	<div class="listview-contacts-head">&nbsp;</div>
+    	<div class="listview-contacts-head" style="padding-left: 10px; padding-top: 55px;" id="listview-contacts-head">
+    		<a data-role="button" id="button-emailall" style="background: #fff;" data-click="emailAll"><i class="icon-envelope"></i>&nbsp;Email All&nbsp;</a>
+    			<a data-role="button" id="button-emailall" style="background: #fff;" data-click="smsAll"><i class="icon-comment"></i>&nbsp;SMS All&nbsp;</a>
+    	</div>
         <ul data-role="listview" id="listview-contacts" data-click="listviewContactsClick"></ul>
     </div>
     
@@ -94,7 +97,6 @@
 	<script type="text/x-kendo-template" id="datatemplate-groups">
 	    <div class="listview-title">#:Name#</div>
 	</script>
-
     
     <script src="content/js/jquery.old.js" type="text/javascript"></script>
     <script src="content/js/kendo.mobile.min.js" type="text/javascript"></script>
