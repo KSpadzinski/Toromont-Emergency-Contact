@@ -23,11 +23,13 @@
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="prerendered-icon" value="true" />
 
-    <!--
+    
     <icon src="content/images/icons/icon.png" />
     <gap:splash src="content/images/splash/splash.png" />
     <gap:splash src="content/images/splash/splash.png"    gap:platform="ios"     width="320" height="480" />
     <gap:splash src="content/images/splash/splash2x.png" gap:platform="ios"     width="640" height="960" />
+    
+    <!--
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
     <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:density="hdpi" />
