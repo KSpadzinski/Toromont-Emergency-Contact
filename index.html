@@ -24,6 +24,7 @@
 
     <!-- Main View - My Contacts -->
     <div data-role="view" data-title="My Contacts" id="view-main" data-layout="layout-main" data-init="CSAPP.Contacts">
+    	<div class="listview-contacts-head">&nbsp;</div>
         <ul data-role="listview" id="listview-contacts" data-click="listviewContactsClick"></ul>
     </div>
     
@@ -33,11 +34,9 @@
     </div>
 
     <!-- Settings View -->
-    <!--
     <div data-role="view" data-title="Settings" id="view-settings" data-layout="layout-main">
         <a data-role="button" class="transitions-button" id="button-signout">Sign out</a>
     </div>
-    -->
     
     <div data-role="layout" data-id="layout-main">
         <header data-role="header">
@@ -59,13 +58,13 @@
     </div>
     
     <!-- DRawer View -->
-	<div data-role="drawer" id="my-drawer" style="width: 180px;" data-views="['view-main', 'view-groups']">
+	<div data-role="drawer" id="my-drawer" style="width: 180px;" data-views="['view-main', 'view-groups', 'view-settings']">
 		<ul data-role="listview" data-type="group">
 		    <li>Contacts Admin
 		        <ul>
 		            <li><a href="#view-main" data-transition="none"><i class="icon-user"></i>&nbsp;My Contacts</a></li>
 		            <li><a href="#view-groups" data-transition="none"><i class="icon-group"></i>&nbsp;My Groups</a></li>
-		            <li><a data-role="button" id="button-signout" data-transition="none"><i class="icon-off"></i>&nbsp;Sign Out</a></li>
+		            <li><a href="#view-settings" data-transition="none"><i class="icon-cog"></i>&nbsp;Settings</a></li>
 		        </ul>
 		    </li>
 		</ul>
@@ -87,7 +86,13 @@
     <script type="text/x-kendo-template" id="datatemplate-contacts">
 	    <div class="listview-name">#:Detail.FullName#</div>
 	    <div class="listview-title">#:Detail.Title#</div>
-	    <a href="tel:#:Detail.MobilePhone#" data-role="button" class="listview-button"><i class="icon-phone"></i>&nbsp;Call Mobile</a><a href="mailto:#:Detail.Email#" data-role="button" class="listview-button"><i class="icon-envelope"></i>&nbsp;Send Email</a><a href="sms:#:Detail.MobilePhone#" data-role="button" class="listview-button"><i class="icon-comment"></i>&nbsp;Send SMS</a>
+	    <a href="tel:#:Detail.MobilePhone#" class="listview-button"><i class="icon-phone"></i>&nbsp;Call</a>&nbsp;|&nbsp;
+	    <a href="mailto:#:Detail.Email#" class="listview-button"><i class="icon-envelope"></i>&nbsp;Email</a>&nbsp;|&nbsp;
+	    <a href="sms:#:Detail.MobilePhone#" class="listview-button"><i class="icon-comment"></i>&nbsp;SMS</a>
+	</script>
+	
+	<script type="text/x-kendo-template" id="datatemplate-groups">
+	    <div class="listview-title">#:Name#</div>
 	</script>
 
     

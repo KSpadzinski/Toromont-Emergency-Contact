@@ -79,27 +79,44 @@ CSAPP.GetLocation = (function () {
 // this function returns a Kendo UI DataSource
 // which reads the top threads off of the programming.reddit
 // datasource
-   
-CSAPP.Contacts = (function() {
-	$("#listview-contacts").kendoMobileListView({
-	    dataSource: kendo.data.DataSource.create({
-			// set the data to a local array of object
-			transport: {
-			read: {
-					url: "http://ws.toromont.ca/touch/BizInfo/Public/contact/myContact",
-					crossDomain: true,
-			        beforeSend: function (xhr) {
-			        	xhr.setRequestHeader("AuthX", "WRAP access_token=" + xTOKEN);
-			        },
-			        dataType: "json"
-			}
-			},
-			schema: {
+var transport = {
+	read: {
+			url: "http://ws.toromont.ca/touch/BizInfo/Public/contact/myContact",
+			crossDomain: true,
+	        beforeSend: function (xhr) {
+	        	xhr.setRequestHeader("AuthX", "WRAP access_token=" + xTOKEN);
+	        },
+	        dataType: "json"
+	    }
+	};
+
+var dsContacts = new kendo.data.DataSource({
+    transport: transport,
+    schema: {
 			data: "Contacts"
 			}
-			}),
+		});
+		
+var dsGroups = new kendo.data.DataSource({
+	transport: transport,
+	schema: {
+		data: "AllGroups"
+	}
+})
+
+CSAPP.Contacts = (function() {
+	$("#listview-contacts").kendoMobileListView({
+	    dataSource: dsContacts,
 	    template: $("#datatemplate-contacts").html(),
-	    style: "inset",
+	    pullToRefresh: true,
+	    fixedHeaders: false
+	});
+});
+
+CSAPP.Groups = (function(){
+	$("#listview-groups").kendoMobileListView({
+	    dataSource: dsGroups,
+	    template: $("#datatemplate-groups").html(),
 	    pullToRefresh: true,
 	    fixedHeaders: false
 	});
