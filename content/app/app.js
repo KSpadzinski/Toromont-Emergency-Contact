@@ -19,7 +19,7 @@ CSAPP.run = (function () {
 
     // check for authentication token
     var xTOKEN = CSAPP.ReadLocalStorage("xToken");
-    if (xTOKEN == "" || xTOKEN == "null") {
+    if ((xTOKEN == null || xTOKEN == "" || xTOKEN == "null")) {
         /* Future Processing of login info on app load*/
     }
     else {
@@ -79,19 +79,33 @@ CSAPP.GetLocation = (function () {
 // this function returns a Kendo UI DataSource
 // which reads the top threads off of the programming.reddit
 // datasource
-CSAPP.Contacts = kendo.data.DataSource.create({
-  // set the data to a local array of object
-  transport: {
-    read: {
-			url: "http://ws.toromont.ca/touch/BizInfo/Public/contact/myContact",
-			crossDomain: true,
-            beforeSend: function (xhr) {
-            	xhr.setRequestHeader("AuthX", "WRAP access_token=" + xTOKEN);
-            },
-            dataType: "json"
-    }
-  },
-  schema: {
-    data: "Contacts"
-  }
+   
+CSAPP.Contacts = (function() {
+	$("#listview-contacts").kendoMobileListView({
+	    dataSource: kendo.data.DataSource.create({
+			// set the data to a local array of object
+			transport: {
+			read: {
+					url: "http://ws.toromont.ca/touch/BizInfo/Public/contact/myContact",
+					crossDomain: true,
+			        beforeSend: function (xhr) {
+			        	xhr.setRequestHeader("AuthX", "WRAP access_token=" + xTOKEN);
+			        },
+			        dataType: "json"
+			}
+			},
+			schema: {
+			data: "Contacts"
+			}
+			}),
+	    template: $("#datatemplate-contacts").html(),
+	    style: "inset",
+	    fixedHeaders: false
+	});
 });
+
+
+
+function listviewContactsClick(e) {
+     console.log(e.item); // The clicked item as a jQuery object
+ }

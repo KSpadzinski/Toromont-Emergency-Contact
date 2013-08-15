@@ -22,32 +22,54 @@
         <p><span id="label-signin-message"></span></p>
     </div>
 
-    <!-- Main View -->
-    <div data-role="view" data-title="My Contacts" id="view-main" data-layout="layout-main">
-        <ul data-role="listview" id="listview-contacts" data-style="inset" data-template="datatemplate-contacts" data-source="CSAPP.Contacts"></ul>
+    <!-- Main View - My Contacts -->
+    <div data-role="view" data-title="My Contacts" id="view-main" data-layout="layout-main" data-init="CSAPP.Contacts">
+        <ul data-role="listview" id="listview-contacts" data-click="listviewContactsClick"></ul>
+    </div>
+    
+    <!-- Groups View -->
+    <div data-role="view" data-title="My Groups" id="view-groups" data-layout="layout-main" data-init="CSAPP.Groups">
+        <ul data-role="listview" id="listview-groups" data-click="listviewGroupsClick"></ul>
     </div>
 
     <!-- Settings View -->
+    <!--
     <div data-role="view" data-title="Settings" id="view-settings" data-layout="layout-main">
         <a data-role="button" class="transitions-button" id="button-signout">Sign out</a>
     </div>
-
+    -->
+    
     <div data-role="layout" data-id="layout-main">
         <header data-role="header">
             <div data-role="navbar">
+            	<a data-role="button" data-rel="drawer" href="#my-drawer" data-icon="drawer-button" data-align="left"></a>
                 <!--<a class="nav-button" data-align="left" data-role="backbutton">Back</a>-->
                 <span data-role="view-title"></span>
                 <!--<a data-align="right" data-role="button" class="nav-button" href="#index">Index</a>-->
             </div>
         </header>
-
+        <!--
         <div data-role="footer">
             <div data-role="tabstrip">
                 <a href="#view-main" data-icon="home">Home</a>
                 <a href="#view-settings" data-icon="settings">Settings</a>
             </div>
         </div>
+        -->
     </div>
+    
+    <!-- DRawer View -->
+	<div data-role="drawer" id="my-drawer" style="width: 180px;" data-views="['view-main', 'view-groups']">
+		<ul data-role="listview" data-type="group">
+		    <li>Contacts Admin
+		        <ul>
+		            <li><a href="#view-main" data-transition="none"><i class="icon-user"></i>&nbsp;My Contacts</a></li>
+		            <li><a href="#view-groups" data-transition="none"><i class="icon-group"></i>&nbsp;My Groups</a></li>
+		            <li><a data-role="button" id="button-signout" data-transition="none"><i class="icon-off"></i>&nbsp;Sign Out</a></li>
+		        </ul>
+		    </li>
+		</ul>
+	</div>
 
 
     <div data-role="modalview" id="modalview-alert" style="width: 275px; height: 275px; display: none;">

@@ -158,3 +158,20 @@
 	color: white;
 	font-size: 12px;
 }
+
+.km-ios #my-drawer .km-content, .km-android #my-drawer .km-content, .km-blackberry #my-drawer .km-content,
+    .km-ios #my-drawer .km-list > li, .km-android #my-drawer .km-list > li, .km-blackberry #my-drawer .km-list > li,
+    .km-ios #my-drawer .km-listview-link > .km-icon, .km-android #my-drawer .km-listview-link > .km-icon, .km-blackberry #my-drawer .km-listview-link > .km-icon,
+    .km-ios #my-drawer .km-list li > .km-icon, .km-android #my-drawer .km-list li > .km-icon, .km-blackberry #my-drawer .km-list li > .km-icon
+    {
+        background-color: #4f4f4f;
+        color: #fff;
+    }
+
+    .km-ios #my-drawer .km-group-title,
+    .km-blackberry #my-drawer .km-group-title
+    {
+        background-color: #6e6e6e;
+        color: #fff;
+    }
+.km-drawer-button:before, .km-drawer-button:after  { content: "\E077"; }
